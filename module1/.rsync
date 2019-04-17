@@ -1,0 +1,16 @@
+# Rsync-Destination für dieses sample
+#
+#   - ssh ls2
+#   - cat ~/website/config/nginx/_template.conf.txt | sed -e 's/%example%/tsstarter/' > ~/website/config/nginx/tsstarter.conf
+#   - cat ~/website/config/nginx/tsstarter.conf
+#   - sudo mkdir -p ~/website/data/example/tsstarter
+#   - sudo chown ubuntu:ubuntu ~/website/data/example/tsstarter
+#   - sudo chmod 775 ~/website/data/example/tsstarter
+#   - echo 'tsstarter' > ~/website/data/example/tsstarter/index.html
+#   - ls -lad ~/website/data/example/tsstarter
+#   - cd ~/website && docker-compose restart
+#
+
+RSYNC_DESTINATION=":~/website/data/example/tsstarter/"
+EXAMPLE_URL="http://tsstarter.example.mikemitterer.at/"
+

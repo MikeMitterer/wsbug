@@ -1,0 +1,57 @@
+{
+    "extends": ["tslint:recommended", "tslint-override", "tslint-consistent-codestyle"],
+
+    "rules": {
+        // "no-console": false
+        "no-trailing-whitespace": {
+            "severity": "off"
+        },
+        "one-line": [true, "check-catch", "check-finally", "check-open-brace", "check-whitespace"],
+        "quotemark": false,
+        "explicit-override": [true, "decorator"],
+        "object-literal-sort-keys": false,
+        "no-any": true,
+
+        "interface-name": [false, "always-prefix"],
+
+        "class-name": false,
+
+        "no-null-keyword": true,
+
+        "max-classes-per-file": false,
+
+        "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore"],
+
+        "member-ordering": [
+            true,
+            {
+                "order": [
+                    "public-static-field",
+                    "private-static-field",
+                    "private-instance-field",
+                    "public-instance-field",
+                    "public-constructor",
+                    "private-constructor",
+                    "public-instance-method",
+                    "protected-instance-method",
+                    "private-instance-method"
+                ]
+            }
+        ],
+
+        // Weitere Infos: https://goo.gl/t5RYfD
+        "naming-convention": [
+            true,
+            // require leading underscores for private properties
+            // and methods, all other rules still apply
+            {"type": "member", "modifiers": "private", "leadingUnderscore": "require"}
+        ],
+
+        "linterOptions": {
+            "exclude": [
+                "lib",
+                "webpack.*.js"
+            ]
+        }
+    }
+}

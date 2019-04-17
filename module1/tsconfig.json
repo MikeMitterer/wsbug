@@ -1,0 +1,40 @@
+// -------------------------------------------------------------------------------------------------
+// Dient im Prinzip nur für die IDE. Hier werden noch zusätzlich (im Vergleich zur .lib.-Version
+// Browserspezifische files eingebunden.
+
+// Weitere Infos:
+//    https://marcobotto.com/blog/compiling-and-bundling-typescript-libraries-with-webpack/
+//      https://www.typescriptlang.org/docs/handbook/compiler-options.html
+
+{
+    "compilerOptions": {
+        // Dient zum importieren von json-Files
+        // In der "include"-Section müssen auch die *.json-Files
+        // eingebunden werden
+        // "resolveJsonModule": true
+
+        "incremental": true,
+
+        "lib": ["esnext", "dom"]
+    },
+
+    "extends": "./tsconfig.lib",
+    "include": [
+        // Damit werden die images erkannt
+        "src/browser/**/*.ts",
+        "src/site/images/typings.d.ts",
+        "src/site/images"
+
+        // Hier werden die auch die Tests eingebunden
+        // Nur damit funktioniert das überschreiben in der "prototype"-chain
+        // Nur damit funktioniert JEST richtig - bzw. die Kombi WS + JEST
+        // "src/test/**/*.ts"
+        // "node_modules/tslint-override/register.d.ts"
+
+        // Test-Config file
+        // Damit das funktioniert muss auch
+        //      "resolveJsonModule": true,
+        // gesetzt sein
+        // "src/test/integration/*.json"
+    ]
+}
